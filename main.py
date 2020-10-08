@@ -7,11 +7,8 @@ import json
 app = Flask(__name__)
 
 # Reading Each JSON File With Data for Each Building
-acacia_rooms = '{ "AC1":24, "AC1MAX":25, "AC2":26, "AC2MAX":25, "AC3":23, "AC3MAX":26, "AC4":12, "AC4MAX":26, "AC5":17, "AC5MAX":25}'
-# with open('data/acacia_data.json') as ar:
-acacia_dict = json.loads(acacia_rooms)
-print(acacia_dict)
-# acacia_rooms.to_json (r'C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\acacia_data.json')
+with open('data/acacia_data.json') as acacia_rooms:
+    acacia_dict = json.load(acacia_rooms)
 # admin_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\admin_data.csv")
 # banksia_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\banksia_data.csv")
 # bluegum_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\bluegum_data.csv")
@@ -23,7 +20,10 @@ print(acacia_dict)
 # lomandra_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\lomandra_data.csv")
 # mallee_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\mallee_data.csv")
 # redgum_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\redgum_data.csv")
+with open('data/sandlewood_data.json') as sandlewood_rooms:
+    sandlewood_dict = json.load(sandlewood_rooms)
 # sandlewood_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\sandlewood_data.csv")
+# sandlewood_rooms.to_json (r'C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\sandlewood_data.json')
 # wattle_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\wattle_data.csv")
 # print(acacia_rooms['acacia'][0]['AC1'])
 
@@ -53,15 +53,6 @@ def index():
 @app.route('/acacia', methods=['GET', 'POST'])
 def acacia():
     return render_template('acacia.html', acacia_dict=acacia_dict)
-
-
-def colourpick():
-    cpick=''
-    if ("AC1" in acacia_dict >= "AC1MAX" in acacia_dict):
-        result = (cpick = 'danger')
-    return cpick('acacia.html', acacia_dict=acacia_dict, cpick=cpick)
-    else():
-    return cpick('acacia.html', acacia_dict=acacia_dict)
 
 
 @app.route('/admin')
@@ -124,9 +115,9 @@ def redgum():
     return render_template('redgum.html')
 
 
-@app.route('/sandlewood')
+@app.route('/sandlewood', methods=['GET', 'POST'])
 def sandlewood():
-    return render_template('sandlewood.html')
+    return render_template('sandlewood.html', sandlewood_dict=sandlewood_dict)
 
 
 @app.route('/wattle')

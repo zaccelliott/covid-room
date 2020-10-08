@@ -5,21 +5,21 @@
 {%endblock %}
 
 {%block firstrow %}
-         <div class="card text-black bg-{{ cpick }} mb-3" style="max-width: 18rem;">
+         <div class="card text-black {% if acacia_dict.AC1>=acacia_dict.AC1MAX %} bg-danger {% elif acacia_dict.AC1>=0.5*acacia_dict.AC1MAX %} bg-warning {% else %} bg-success {% endif %} mb-3" style="max-width: 18rem;">
              <div class="card-body">
              <h5 class="card-title">AC1</h5>
              <p class="card-text">Max Safe Number of People: {{ acacia_dict.AC1MAX }}</p>
              <p class="card-text">Current Number of People: {{ acacia_dict.AC1 }}</p>
              </div>
           </div>
-         <div class="card text-black bg-danger mb-3" style="max-width: 18rem;">
+         <div class="card text-black {% if acacia_dict.AC2>=acacia_dict.AC2MAX %} bg-danger {% elif acacia_dict.AC2>=0.5*acacia_dict.AC2MAX %} bg-warning {% else %} bg-success {% endif %} mb-3" style="max-width: 18rem;">
              <div class="card-body">
              <h5 class="card-title">AC2</h5>
              <p class="card-text">Max Safe Number of People: {{ acacia_dict.AC2MAX }}</p>
              <p class="card-text">Current Number of People: {{ acacia_dict.AC2 }}</p>
              </div>
           </div>
-          <div class="card text-black bg-success mb-3" style="max-width: 18rem;">
+          <div class="card text-black {% if acacia_dict.AC3>=acacia_dict.AC3MAX %} bg-danger {% elif acacia_dict.AC3>=0.5*acacia_dict.AC3MAX %} bg-warning {% else %} bg-success {% endif %} mb-3" style="max-width: 18rem;">
              <div class="card-body">
              <h5 class="card-title">AC3</h5>
              <p class="card-text">Max Safe Number of People: {{ acacia_dict.AC3MAX }}</p>
@@ -29,14 +29,14 @@
 {% endblock %}
 
 {%block secondrow %}
-         <div class="card text-black bg-warning mb-3" style="max-width: 18rem;">
+         <div class="card text-black {% if acacia_dict.AC4>=acacia_dict.AC4MAX %} bg-danger {% elif acacia_dict.AC4>=0.5*acacia_dict.AC4MAX %} bg-warning {% else %} bg-success {% endif %} mb-3" style="max-width: 18rem;">
              <div class="card-body">
              <h5 class="card-title">AC4</h5>
              <p class="card-text">Max Safe Number of People: {{ acacia_dict.AC4MAX }}</p>
              <p class="card-text">Current Number of People: {{ acacia_dict.AC4 }}</p>
              </div>
           </div>
-         <div class="card text-black bg-warning mb-3" style="max-width: 18rem;">
+         <div class="card text-black {% if acacia_dict.AC5>=acacia_dict.AC5MAX %} bg-danger {% elif acacia_dict.AC5>=0.5*acacia_dict.AC5MAX %} bg-warning {% else %} bg-success {% endif %} mb-3" style="max-width: 18rem;">
              <div class="card-body">
              <h5 class="card-title">AC5</h5>
              <p class="card-text">Max Safe Number of People: {{ acacia_dict.AC5MAX }}</p>
