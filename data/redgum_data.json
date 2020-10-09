@@ -1,0 +1,18 @@
+   {
+      "OF1": 1,
+      "OF1_MAX": 3,
+      "OF2": 1,
+      "OF2_MAX": 2,
+      "OF3": "0",
+      "OF3_MAX": 2,
+      "OF4": 2,
+      "OF4_MAX": 2,
+      "OF5": 2,
+      "OF5_MAX": 4,
+      "MEET": 8,
+      "MEET_MAX": 6,
+      "ICT": 6,
+      "ICT_MAX": 8,
+      "BOOK": "0",
+      "BOOK_MAX": 8
+   }

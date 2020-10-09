@@ -1,47 +1,39 @@
-# Import Flask Render Template
+# Importing Flask Render Template and JSON
 from flask import Flask, render_template, request
-import pandas as pd
 import json
 
-
+# Initiating Flask App
 app = Flask(__name__)
 
-# Reading Each JSON File With Data for Each Building
+# Reading Each JSON File and Turning into Dictionary for Each Building
 with open('data/acacia_data.json') as acacia_rooms:
     acacia_dict = json.load(acacia_rooms)
-# admin_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\admin_data.csv")
-# banksia_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\banksia_data.csv")
-# bluegum_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\bluegum_data.csv")
-# boronia_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\boronia_data.csv")
-# caledonia_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\caledonia_data.csv")
-# chapel_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\chapel_data.csv")
-# danthonia_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\danthonia_data.csv")
-# gravelia_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\gravelia_data.csv")
-# lomandra_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\lomandra_data.csv")
-# mallee_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\mallee_data.csv")
-# redgum_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\redgum_data.csv")
+with open('data/admin_data.json') as admin_rooms:
+    admin_dict = json.load(admin_rooms)
+with open('data/banksia_data.json') as banksia_rooms:
+    banksia_dict = json.load(banksia_rooms)
+with open('data/bluegum_data.json') as bluegum_rooms:
+    bluegum_dict = json.load(bluegum_rooms)
+with open('data/boronia_data.json') as boronia_rooms:
+    boronia_dict = json.load(boronia_rooms)
+with open('data/caledonia_data.json') as caledonia_rooms:
+    caledonia_dict = json.load(caledonia_rooms)
+with open('data/chapel_data.json') as chapel_rooms:
+    chapel_dict = json.load(chapel_rooms)
+with open('data/danthonia_data.json') as danthonia_rooms:
+    danthonia_dict = json.load(danthonia_rooms)
+with open('data/gravelia_data.json') as gravelia_rooms:
+    gravelia_dict = json.load(gravelia_rooms)
+with open('data/lomandra_data.json') as lomandra_rooms:
+    lomandra_dict = json.load(lomandra_rooms)
+with open('data/mallee_data.json') as mallee_rooms:
+    mallee_dict = json.load(mallee_rooms)
+with open('data/redgum_data.json') as redgum_rooms:
+    redgum_dict = json.load(redgum_rooms)
 with open('data/sandlewood_data.json') as sandlewood_rooms:
     sandlewood_dict = json.load(sandlewood_rooms)
-# sandlewood_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\sandlewood_data.csv")
-# sandlewood_rooms.to_json (r'C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\sandlewood_data.json')
-# wattle_rooms = pd.read_csv(r"C:\Users\zelli\PycharmProjects\COVIDSafeRoom\data\wattle_data.csv")
-# print(acacia_rooms['acacia'][0]['AC1'])
-
-# Transferring JSON Data to Individual Dictionaries
-# acacia_dict = json.loads(acacia_rooms)
-# admin_dict = json.loads(admin_rooms)
-# banksia_dict = json.loads(banksia_rooms)
-# bluegum_dict = json.loads(bluegum_rooms)
-# boronia_dict = json.loads(boronia_rooms)
-# caledonia_dict = json.loads(caledonia_rooms)
-# chapel_dict = json.loads(chapel_rooms)
-# danthonia_dict = json.loads(danthonia_rooms)
-# gravelia_dict = json.loads(gravelia_rooms)
-# lomandra_dict = json.loads(lomandra_rooms)
-# mallee_dict = json.loads(mallee_rooms)
-# redgum_dict = json.loads(redgum_rooms)
-# sandlewood_dict = json.loads(sandlewood_rooms)
-# wattle_dict = json.loads(wattle_rooms)
+with open('data/wattle_data.json') as wattle_rooms:
+    wattle_dict = json.load(wattle_rooms)
 
 
 # Application Routes for Each Page/Building
@@ -55,64 +47,64 @@ def acacia():
     return render_template('acacia.html', acacia_dict=acacia_dict)
 
 
-@app.route('/admin')
+@app.route('/admin', methods=['GET', 'POST'])
 def admin():
-    return render_template('admin.html')
+    return render_template('admin.html', admin_dict=admin_dict)
 
 
-@app.route('/banksia')
+@app.route('/banksia', methods=['GET', 'POST'])
 def banksia():
-    return render_template('banksia.html')
+    return render_template('banksia.html', banksia_dict=banksia_dict)
 
 
-@app.route('/bluegum')
+@app.route('/bluegum', methods=['GET', 'POST'])
 def bluegum():
-    return render_template('bluegum.html')
+    return render_template('bluegum.html', bluegum_dict=bluegum_dict)
 
 
-@app.route('/boronia')
+@app.route('/boronia', methods=['GET', 'POST'])
 def boronia():
-    return render_template('boronia.html')
+    return render_template('boronia.html', boronia_dict=boronia_dict)
 
 
-@app.route('/caledonia')
+@app.route('/caledonia', methods=['GET', 'POST'])
 def caledonia():
-    return render_template('caledonia.html')
+    return render_template('caledonia.html', caledonia_dict=caledonia_dict)
 
 
-@app.route('/chapel')
+@app.route('/chapel', methods=['GET', 'POST'])
 def chapel():
-    return render_template('chapel.html')
+    return render_template('chapel.html', chapel_dict=chapel_dict)
 
 
-@app.route('/danthonia')
+@app.route('/danthonia', methods=['GET', 'POST'])
 def danthonia():
-    return render_template('danthonia.html')
+    return render_template('danthonia.html', danthonia_dict=danthonia_dict)
 
 
-@app.route('/gravelia')
+@app.route('/gravelia', methods=['GET', 'POST'])
 def gravelia():
-    return render_template('gravelia.html')
+    return render_template('gravelia.html', gravelia_dict=gravelia_dict)
 
 
-@app.route('/lomandra')
+@app.route('/lomandra', methods=['GET', 'POST'])
 def lomandra():
-    return render_template('lomandra.html')
+    return render_template('lomandra.html', lomandra_dict=lomandra_dict)
 
 
-@app.route('/malleelow')
+@app.route('/malleelow', methods=['GET', 'POST'])
 def malleelow():
-    return render_template('malleelow.html')
+    return render_template('malleelow.html', mallee_dict=mallee_dict)
 
 
-@app.route('/malleeup')
+@app.route('/malleeup', methods=['GET', 'POST'])
 def malleeup():
-    return render_template('malleeup.html')
+    return render_template('malleeup.html', mallee_dict=mallee_dict)
 
 
-@app.route('/redgum')
+@app.route('/redgum', methods=['GET', 'POST'])
 def redgum():
-    return render_template('redgum.html')
+    return render_template('redgum.html', redgum_dict=redgum_dict)
 
 
 @app.route('/sandlewood', methods=['GET', 'POST'])
@@ -120,6 +112,6 @@ def sandlewood():
     return render_template('sandlewood.html', sandlewood_dict=sandlewood_dict)
 
 
-@app.route('/wattle')
+@app.route('/wattle', methods=['GET', 'POST'])
 def wattle():
-    return render_template('wattle.html')
+    return render_template('wattle.html', wattle_dict=wattle_dict)

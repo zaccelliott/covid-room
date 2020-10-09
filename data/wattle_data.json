@@ -1,0 +1,10 @@
+   {
+      "CANTEEN": 8,
+      "CANTEEN_MAX": 10,
+      "STAFF": 8,
+      "STAFF_MAX": 20,
+      "WATTLE": 33,
+      "WATTLE_MAX": 20,
+      "COFFEE": 2,
+      "COFFEE_MAX": 2
+   }

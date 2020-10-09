@@ -1,0 +1,18 @@
+ {
+      "FOYER": 3,
+      "FOYER_MAX": 12,
+      "P_OFFICE": 2,
+      "P_OFFICE_MAX": 4,
+      "AP_OFFICE": 1,
+      "AP_OFFICE_MAX": 4,
+      "MED": 2,
+      "MED_MAX": 8,
+      "OF3": 1,
+      "OF3_MAX": 2,
+      "OF4": 1,
+      "OF4_MAX": 2,
+      "OF5": "0",
+      "OF5_MAX": 2,
+      "OF6": 3,
+      "OF6_MAX": 2
+   }
